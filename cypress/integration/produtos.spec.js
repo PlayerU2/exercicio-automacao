@@ -34,4 +34,12 @@ describe('Funcionalidade Página de produtos', () => {
         cy.get('.dropdown-toggle > .mini-cart-items').should('contain' , quantidade)
         cy.get('.woocommerce-message').should('contain' , quantidade + ' × “Abominable Hoodie” foram adicionados no seu carrinho.')
     });
+
+    it('Deve adicionar produtos ao carrinho - Usando comando customizado', () => {
+        cy.addProdutos('Aero Daily Fitness Tee', 'M', 'Black', 3)
+    });
+
+    it('Deve adicionar produtos ao carrinho - Usando comando customizado', () => {
+        cy.addProdutos('Abominable Hoodie', 'XS', 'Green', 5)
+    });
 });
